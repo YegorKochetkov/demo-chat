@@ -1,0 +1,38 @@
+.contactsList {
+  border-right: 2px solid var(--color3-light-theme);
+  overflow-y: auto;
+
+  &-selectedChat {
+    @media (max-width: 699px) {
+      display: none;
+    }
+  }
+  
+  &__header {
+    display: flex;
+    flex-direction: column;
+    gap: calc(var(--scale) * 1);
+  
+    padding: calc(var(--scale) * 0.75);
+    background-color: var(--button-background-color);
+  
+    border-bottom: 2px solid var(--color3-light-theme);
+    
+    @media (prefers-color-scheme: light) {
+      color: var(--color-light-theme);
+      background-color: var(--background2-color-light-theme);
+    }
+  }
+  
+  &__main {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  &__title {
+    margin: 0;
+    padding: calc(var(--scale) * 0.75);
+  
+    color: var(--link-color);
+  }
+}
