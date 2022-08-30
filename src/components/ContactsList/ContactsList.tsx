@@ -7,10 +7,14 @@
 // import { SortContactsByDate } from "../helpers/SortContactsByDate";
 // import { SearchInput } from '../SearchInput/SearchInput';
 // import { UserAvatar } from '../UserAvatar/UserAvatar';
+import { Contact } from "../Contact/Contact";
 import styles from './ContactsList.module.scss';
 
 export const ContactsList: React.FC = () => {
-  return <p className={styles.contactsList}>And here</p>
+  return <p className={styles.contactsList}>
+    And here
+    <Contact />
+    </p>
   // const selectedContact = useAppSelector(getSelectedContact);
   // let contacts = useAppSelector(getContacts);
   // const [contactsToRender, setContactsToRender] = useState(contacts);

@@ -1,0 +1,86 @@
+.contact {
+  display: grid;
+  grid-template-columns: min-content 1fr max-content;
+  grid-template-rows: min-content min-content min-content;
+  align-items: center;
+  gap: 0 calc(var(--scale) * 0.5);
+  grid-template-areas: 
+    "avatar name date"
+    "avatar message ."
+    ". message .";
+
+  padding: calc(var(--scale) * 0.75);
+  transition: background-color 0.3s;
+  
+  &:hover {
+    cursor: pointer;
+    background-color: var(--color3);
+  }
+  
+  &:not(:last-child) {
+    border-bottom: 2px solid var(--color2);
+  }
+
+  @media (prefers-color-scheme: light) {
+    border-color: var(--color3-light-theme);
+
+    &:hover {
+      background-color: var(--background3-color-light-theme);
+    }
+  }
+}
+
+.contact__name,
+.contact__message,
+.contact__date {
+  margin: 0;
+}
+
+.contact__avatar {
+  grid-area: avatar;
+}
+
+.contact__name {
+  grid-area: name;
+  
+  font-weight: bolder;
+  font-size: calc(var(--scale) * 0.75);
+
+  @media (max-width: 699px) {
+    font-size: calc(var(--scale) * 1.25);
+  }
+}
+
+.contact__message {
+  grid-area: message;
+  height: calc(var(--scale) * 1.75);
+
+  font-size: calc(var(--scale) * 0.75);
+  color: var(--color2);
+
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+
+  @media (prefers-color-scheme: light) {
+    color: var(--color2-light-theme);
+  }
+
+  @media (max-width: 699px) {
+    height: calc(var(--scale) * 2.85);
+    font-size: calc(var(--scale) * 1.25);
+  }
+}
+
+.contact__date {
+  grid-area: date;
+
+  font-size: calc(var(--scale) * 0.6);
+  font-weight: bolder;
+
+  @media (max-width: 699px) {  
+    font-size: calc(var(--scale) * 1);
+  }
+}

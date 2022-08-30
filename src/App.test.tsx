@@ -5,5 +5,5 @@ import App from './App';
 test('renders learn react link', () => {
   render(<App />);
   const linkElement = screen.getAllByText(/here/i);
-  expect(linkElement).toHaveLength(2);
+  expect(linkElement).toHaveLength(3);
 });
