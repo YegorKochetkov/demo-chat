@@ -1,4 +1,4 @@
-import { Contact } from "../../store/contactsSlice";
+import { Contact } from '../store/contactsSlice';
 
 export const SortContactsByDate = (contacts: Contact[]) => {
   return [...contacts].sort((prevContact, nextContact) => {
