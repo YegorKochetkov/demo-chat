@@ -1,4 +1,5 @@
 import React, { memo } from 'react';
+import { UserAvatar } from "../UserAvatar";
 // import { Contact as ContactType, setSelectedContact } from '../../store/contactsSlice';
 // import { useAppDispatch } from '../../store/hooks';
 // import { dateFormatter } from '../helpers/dateFormatter';
@@ -11,7 +12,9 @@ import styles from './Contact.module.scss';
 // };
 
 export const Contact: React.FC = memo(() => {
-  return <p className={styles.contact}>here 3</p>
+  return <p className={styles.contact}>here 3
+  <UserAvatar />
+  </p>
 // export const Contact: React.FC<Props> = memo(({ contact, isOnline }) => {
   // const {
   //   id,
