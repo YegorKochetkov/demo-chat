@@ -1,0 +1,56 @@
+.messageInput {
+  position: relative;
+
+  display: flex;
+  width: 100%;
+  
+  &__field {
+    width: 100%;
+    padding: calc(var(--scale) * 0.35);
+    padding-left: calc(var(--scale) * 0.75);
+    padding-right: calc(var(--scale) * 2);
+  
+    font-size: calc(var(--scale) * 0.75);
+  
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: calc(var(--scale) * 2.5);
+  }
+  
+  &__submit {
+    position: absolute;
+    right: 2%;
+    top: 28%;
+  
+    width: calc(var(--scale) * 0.75);
+    height: calc(var(--scale) * 0.75);
+  
+    border: none;
+    cursor: pointer;
+  
+    // background-color: transparent;
+    // background-image: url(../../assets/send.svg);
+    // background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: calc(var(--scale) * 0.75);
+  }
+  
+  &__submit:active {
+    transform: scale(0.9);
+  }
+  
+  @media (max-width: 699px) {
+    &__field {
+      padding: calc(var(--scale) * 0.5);
+      padding-left: calc(var(--scale) * 1);
+      padding-right: calc(var(--scale) * 2.5);
+    
+      font-size: calc(var(--scale) * 1.25);
+    }
+  
+    &__submit {
+      width: calc(var(--scale) * 1.25);
+      height: calc(var(--scale) * 1.25);  
+      background-size: calc(var(--scale) * 1.25);
+    }
+  }
+}

@@ -4,6 +4,7 @@
 // import { Message } from '../Message/Message';
 // import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { Message } from "../Message";
+import { MessageInput } from "../MessageInput";
 import styles from './ChatRoom.module.scss';
 // import { useMemo } from 'react';
 
@@ -11,6 +12,7 @@ export const ChatRoom: React.FC = () => {
   return <p className={styles.chatRoom}>
     Here
     <Message />
+    <MessageInput />
     </p>
   // const dispatch = useAppDispatch();
   // const selectedContact = useAppSelector(getSelectedContact);
