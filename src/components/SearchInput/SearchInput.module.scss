@@ -1,0 +1,25 @@
+.searchInput {
+  width: 100%;
+  padding: calc(var(--scale) * 0.35);
+  padding-left: calc(var(--scale) * 2.5);
+
+  font-size: calc(var(--scale) * 0.75);
+
+  border: 1px solid rgb(201, 201, 201);
+  border-radius: calc(var(--scale) * 2.5);
+
+  // background-image: url(../../assets/search.svg);
+  background-position: calc(var(--scale) * 0.75);
+  background-repeat: no-repeat;
+  background-size: calc(var(--scale) * 0.75);
+  
+  @media (max-width: 699px) {
+    padding: calc(var(--scale) * 0.5);
+    padding-left: calc(var(--scale) * 2.75);
+  
+    font-size: calc(var(--scale) * 1.25);
+
+    background-size: calc(var(--scale) * 1.25);
+  }
+}
+

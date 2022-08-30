@@ -8,10 +8,12 @@
 // import { SearchInput } from '../SearchInput/SearchInput';
 // import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { Contact } from "../Contact/Contact";
+import { SearchInput } from "../SearchInput";
 import styles from './ContactsList.module.scss';
 
 export const ContactsList: React.FC = () => {
   return <p className={styles.contactsList}>
+    <SearchInput />
     And here
     <Contact />
     </p>
