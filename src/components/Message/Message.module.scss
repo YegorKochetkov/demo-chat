@@ -1,0 +1,53 @@
+.message {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--scale) * 0.5);
+
+  margin-bottom: calc(var(--scale) * 1.25);
+  
+  &__text,
+  &__myMessage {
+    width: 75%;
+    padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
+    margin: 0;
+  
+    border-radius: calc(var(--scale) * 1);
+    color: var(--color);
+    background-color: var(--button-background-color);
+  }
+  
+  &__myMessage {
+    margin-left: auto;
+    color: var(--color-light-theme);
+    background-color: var(--background2-color-light-theme);
+  }
+  
+  &__date,
+  &__myMessageDate {
+    margin: 0;
+    font-size: calc(var(--scale) * 0.85);;
+  }
+  
+  &__myMessageDate {
+    margin-left: auto;
+  }
+  
+  @media (prefers-color-scheme: light) {
+    &__text {
+      color: var(--color);
+      background-color: var(--background-color);
+    }
+  
+    &__myMessage {
+      color: var(--color-light-theme);
+      background-color: var(--background-color-light-theme);
+    }
+  }
+  
+  @media (max-width: 699px) {
+    &__text,
+    &__myMessage {
+      font-size: calc(var(--scale) * 1.25);
+    }
+  }
+}

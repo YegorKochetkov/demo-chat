@@ -3,11 +3,15 @@
 // import { MessageInput } from '../MessageInput/MessageInput';
 // import { Message } from '../Message/Message';
 // import { UserAvatar } from '../UserAvatar/UserAvatar';
+import { Message } from "../Message";
 import styles from './ChatRoom.module.scss';
 // import { useMemo } from 'react';
 
 export const ChatRoom: React.FC = () => {
-  return <p className={styles.chatRoom}>Here</p>
+  return <p className={styles.chatRoom}>
+    Here
+    <Message />
+    </p>
   // const dispatch = useAppDispatch();
   // const selectedContact = useAppSelector(getSelectedContact);
   // const contacts = useAppSelector(getContacts);
