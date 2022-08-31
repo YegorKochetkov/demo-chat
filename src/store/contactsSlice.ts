@@ -1,4 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
+import { checkNotificationPromise } from "../helpers/checkNotificationPromise";
 import { SortContactsByDate } from '../helpers/SortContactsByDate';
 import { mockInitialData } from "../mockInitialData/mockInitialData";
 import { RootState } from './store';
@@ -40,6 +41,27 @@ export const contactsSlice = createSlice({
 
       contact?.messages.push(action.payload);
       localStorage.setItem('contacts', JSON.stringify(state));
+
+      if (checkNotificationPromise()) {
+        Notification.requestPermission(newMessage);
+      }
+
+      function newMessage(permission: string) {
+        if (permission !== "granted") return false;
+
+        if (document.visibilityState !== 'visible') {
+          const notify = new Notification("Fake chat", {
+            body : action.payload.text,
+          });
+  
+          document.addEventListener('visibilitychange', () => {
+            if (document.visibilityState === 'visible') {
+              // The tab has become visible so clear the now-stale Notification.
+              notify.close();
+            }
+          });
+        }
+      }
     },
   }
 });
