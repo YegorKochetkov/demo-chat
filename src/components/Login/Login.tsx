@@ -80,10 +80,10 @@ export const Login: React.FC = () => {
         justify-content-center
         p-4
       '
+      style={{ maxWidth: '400px', minWidth: 'fit-content'}}
     >
       <div
         className='w-100'
-        style={{ maxWidth: '400px'}}
       >
         <Card>
           <Card.Body>
