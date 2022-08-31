@@ -1,13 +1,23 @@
 import React from 'react';
 import styles from './App.module.scss';
-import { ChatRoom } from './components/ChatRoom';
-import { ContactsList } from "./components/ContactsList";
+import { SignUp } from './components/SignUp/SignUp';
+import { Login } from './components/Login/Login';
+import { Route, Routes} from 'react-router-dom'
+import { Chat } from './components/Chat';
+import { RequireAuth } from './components/RequireAuth';
 
 const App: React.FC = () => {
   return (
     <div className={styles.App}>
-      <ContactsList />
-      <ChatRoom />
+      <Routes>
+        <Route path='/' element={<Login />} />
+        <Route path='/signup' element={<SignUp />} />
+        <Route path='/chat' element={
+          <RequireAuth>
+            <Chat />
+          </RequireAuth>
+        } />
+      </Routes>
     </div>
   )
 };
