@@ -1,0 +1,11 @@
+.chat {
+  display: grid;
+  grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
+  
+  height: 100vh;
+  max-width: 1600px;
+  
+  @media (max-width: 699px) {
+    grid-template-columns: 1fr;
+  }
+}

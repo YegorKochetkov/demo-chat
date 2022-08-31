@@ -1,6 +1,6 @@
 {
   "name": "demo-chat",
-  "homepage": "https://yegorkochetkov.github.io/demo-chat",
+  "homepage": "https://yegorkochetkov.github.io/demo-chat/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -21,7 +21,9 @@
     "react": "^18.2.0",
     "react-bootstrap": "^2.5.0",
     "react-dom": "^18.2.0",
+    "react-google-button": "^0.7.2",
     "react-redux": "^8.0.2",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "sass": "^1.54.6",
     "typescript": "^4.8.2",
