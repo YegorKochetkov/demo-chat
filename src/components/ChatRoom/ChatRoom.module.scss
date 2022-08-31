@@ -7,7 +7,7 @@
     display: none;
   }
   
-  &-selectedChat {
+  &.chatRoom_selectedChat {
     @media (max-width: 699px) {
       display: flex;
     }
@@ -26,10 +26,6 @@
     @media (prefers-color-scheme: light) {
       color: var(--color-light-theme);
       background-color: var(--background2-color-light-theme);
-    }
-
-    @media (max-width: 699px) {
-      display: none;  
     }
   }
 
@@ -70,12 +66,12 @@
     margin-left: auto;
     margin-right: calc(var(--scale) * 1);
   
-    // background: none;
-    // border: none;
-    // background-image: url(../../assets/arrowback.svg);
-    // background-position: right;
-    // background-repeat: no-repeat;
-    // background-size: calc(var(--scale) * 1.75);
+    background: none;
+    border: none;
+    background-image: url(../../assets//arrow-back.svg);
+    background-position: right;
+    background-repeat: no-repeat;
+    background-size: calc(var(--scale) * 1.75);
   
     cursor: pointer;
     
