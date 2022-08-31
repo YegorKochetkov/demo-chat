@@ -10,6 +10,7 @@
     width: 75%;
     padding: calc(var(--scale) * 0.5) calc(var(--scale) * 1);
     margin: 0;
+    overflow-wrap: anywhere;
   
     border-radius: calc(var(--scale) * 1);
     color: var(--color);

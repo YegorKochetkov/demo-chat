@@ -1,5 +1,5 @@
 import React, { memo, useEffect, useRef } from 'react';
-import { MessageType as MessageType } from '../../store/contactsSlice';
+import { MessageType } from '../../store/contactsSlice';
 import { useAppSelector } from '../../store/hooks';
 import { dateFormatter } from '../../helpers/dateFormatter';
 import styles from './Message.module.scss';
