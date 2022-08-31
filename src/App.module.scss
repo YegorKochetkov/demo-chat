@@ -9,6 +9,8 @@
   grid-template-columns: minmax(min-content, 2fr) minmax(min-content, 3fr);
   
   height: 100vh;
+  max-width: 1600px;
+  margin: 0 auto;
   
   @media (max-width: 699px) {
     grid-template-columns: 1fr;
