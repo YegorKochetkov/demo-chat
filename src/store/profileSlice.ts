@@ -1,12 +1,15 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
+import photo from '../assets/user_icon.png';
 
 interface ProfileState {
   avatar: string,
+  name: string,
 }
 
 const initialState: ProfileState = {
-  avatar: '../assets/user_icon.png',
+  avatar: photo,
+  name: '',
 };
 
 export const profileSlice = createSlice({
@@ -21,6 +24,6 @@ export const profileSlice = createSlice({
 
 export const { setProfileAvatar } = profileSlice.actions;
 
-export const getProfileAvatar = (state: RootState) => state.profile.avatar;
+export const getProfile = (state: RootState) => state.profile;
 
 export default profileSlice.reducer;
