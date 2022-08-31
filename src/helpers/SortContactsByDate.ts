@@ -1,6 +1,6 @@
-import { Contact } from '../store/contactsSlice';
+import { ContactType } from '../store/contactsSlice';
 
-export const SortContactsByDate = (contacts: Contact[]) => {
+export const SortContactsByDate = (contacts: ContactType[]) => {
   return [...contacts].sort((prevContact, nextContact) => {
     if (prevContact.messages.length && nextContact.messages.length) {
       const prevContactLastMessageDate = new Date(prevContact.messages[prevContact.messages.length - 1].createdAt);
