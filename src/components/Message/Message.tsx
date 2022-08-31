@@ -1,39 +1,40 @@
-import React, { memo } from 'react';
-// import React, { memo, useEffect, useRef } from 'react';
-// import { getSelectedContact, Message as MessageType } from '../../store/contactsSlice';
-// import { useAppSelector } from '../../store/hooks';
-// import { dateFormatter } from '../helpers/dateFormatter';
+import React, { memo, useEffect, useRef } from 'react';
+import { MessageType as MessageType } from '../../store/contactsSlice';
+import { useAppSelector } from '../../store/hooks';
+import { dateFormatter } from '../../helpers/dateFormatter';
 import styles from './Message.module.scss';
+import { getSelectedContact } from "../../store/selectedContact";
 
+type Props = {
+  message: MessageType,
+};
 
-export const Message: React.FC = memo(() => {
-  return <p className={styles.message}>here 4</p>
-// export const Message: React.FC<Props> = memo(({ message }) => {
-  // const selectedContact = useAppSelector(getSelectedContact);
+export const Message: React.FC<Props> = memo(({ message }) => {
+  const selectedContact = useAppSelector(getSelectedContact);
 
-  // const lastMessage = useRef<null | HTMLDivElement>(null);
+  const lastMessage = useRef<null | HTMLDivElement>(null);
 
-  // useEffect(() => {
-  //   lastMessage.current?.scrollIntoView();
-  // }, [selectedContact]);
+  useEffect(() => {
+    lastMessage.current?.scrollIntoView();
+  }, [selectedContact]);
 
-  // return (
-  //   <div
-  //     className={styles.message}
-  //     ref={lastMessage}
-  //   >
-  //     <p className={message.isMyMessage
-  //       ? styles.message__myMessage
-  //       : styles.message__text
-  //     }>
-  //       {message.text}
-  //     </p>
-  //     <p className={message.isMyMessage
-  //       ? styles.message__myMessageDate
-  //       : styles.message__date
-  //     }>
-  //       {dateFormatter(message.createdAt, 'long')}
-  //     </p>
-  //   </div>
-  // );
+  return (
+    <div
+      className={styles.message}
+      ref={lastMessage}
+    >
+      <p className={message.isMyMessage
+        ? styles.message__myMessage
+        : styles.message__text
+      }>
+        {message.text}
+      </p>
+      <p className={message.isMyMessage
+        ? styles.message__myMessageDate
+        : styles.message__date
+      }>
+        {dateFormatter(message.createdAt, 'long')}
+      </p>
+    </div>
+  );
 });
