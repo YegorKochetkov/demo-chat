@@ -18,14 +18,14 @@
     width: calc(var(--scale) * 1.5);
     height: calc(var(--scale) * 1.5);
   
-    // background-image: url(../../assets/checked.svg);
+    background-image: url(../../assets/checked.svg);
     background-position: calc(var(--scale) * 0.5);
     background-repeat: no-repeat;
     background-size: calc(var(--scale) * 0.75);;
   }
   
   &__statusOffline {
-    // background-image: url(../../assets/offline.svg);
+    background-image: url(../../assets/offline.svg);
   }
   
   &__photoWrapper {

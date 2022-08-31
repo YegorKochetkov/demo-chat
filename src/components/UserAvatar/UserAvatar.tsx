@@ -9,7 +9,6 @@ type Props = {
 export const UserAvatar: React.FC<Props> = memo(({ photo, isOnline }) => {
   return (
     <section className={styles.user}>
-      here 7
       <div className={styles.user__photoWrapper}>
         <img
           src={photo}
