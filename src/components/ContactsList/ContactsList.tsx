@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from 'react';
-import { getContacts, getSelectedContact } from '../../store/contactsSlice';
+import { ContactType, getContacts } from '../../store/contactsSlice';
 import { useAppSelector } from '../../store/hooks';
-import { getProfileAvatar } from '../../store/profileSlice';
+import { getProfile } from '../../store/profileSlice';
 import { getSearchQuery } from '../../store/searchQuerySlice';
 import { Contact } from '../Contact';
 import { SortContactsByDate } from '../../helpers/SortContactsByDate';
 import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { SearchInput } from "../SearchInput";
+import { getSelectedContact } from "../../store/selectedContact";
 import styles from './ContactsList.module.scss';
 
 export const ContactsList: React.FC = () => {
   const selectedContact = useAppSelector(getSelectedContact);
-  let contacts = useAppSelector(getContacts);
-  const [contactsToRender, setContactsToRender] = useState(contacts);
+  const contacts = useAppSelector(getContacts);
 
-  const avatar = useAppSelector(getProfileAvatar);
+  const [contactsToRender, setContactsToRender] = useState<ContactType[]>(contacts);
+  localStorage.setItem('contacts', JSON.stringify(contacts));
+
+  const profile = useAppSelector(getProfile);
   const searchQuery = useAppSelector(getSearchQuery);
 
   useEffect(() => {
@@ -25,8 +28,8 @@ export const ContactsList: React.FC = () => {
     const sortedContactsList = contacts.filter((contact) => {
       return contact.name.toLowerCase().includes(searchQuery)
         || contact.messages.some(
-            (message) => message.text.toLowerCase().includes(searchQuery)
-          );
+          (message) => message.text.toLowerCase().includes(searchQuery)
+        );
     });
 
     setContactsToRender(sortedContactsList);
@@ -39,19 +42,18 @@ export const ContactsList: React.FC = () => {
         : styles.contactsList
     }>
       <header className={styles.contactsList__header}>
-        <UserAvatar photo={avatar} isOnline={true} />
+        <UserAvatar photo={profile.avatar} isOnline={true} />
         <SearchInput />
       </header>
       <main className={styles.contactsList__main}>
-        <h2 className={styles.contactsList__title}> 
+        <h2 className={styles.contactsList__title}>
           Chats
         </h2>
-        {contactsToRender.map((contact) => 
+        {contactsToRender.map((contact) =>
           <Contact
-          contact={contact}
-          isOnline={contact.isOnline}
-          key={contact.id}
-        />
+            id={contact.id}
+            key={contact.id}
+          />
         )}
       </main>
     </aside>

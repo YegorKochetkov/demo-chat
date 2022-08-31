@@ -2,7 +2,7 @@
   border-right: 2px solid var(--color3-light-theme);
   overflow-y: auto;
 
-  &-selectedChat {
+  &.contactsList_selectedChat {
     @media (max-width: 699px) {
       display: none;
     }
