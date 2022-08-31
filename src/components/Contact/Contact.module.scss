@@ -53,10 +53,9 @@
 
 .contact__message {
   grid-area: message;
-  height: calc(var(--scale) * 1.75);
 
   font-size: calc(var(--scale) * 0.75);
-  line-height: calc(var(--scale) * 0.85);;
+  line-height: normal;
   color: var(--color2);
 
   overflow: hidden;
@@ -70,7 +69,6 @@
   }
 
   @media (max-width: 699px) {
-    height: calc(var(--scale) * 2.5);
     font-size: calc(var(--scale) * 1.25);
   }
 }

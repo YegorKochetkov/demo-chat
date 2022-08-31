@@ -57,6 +57,7 @@ export const MessageInput: React.FC = memo(() => {
       />
       <button
         type='submit'
+        name='send message'
         className={styles.messageInput__submit}
       />
     </form>
