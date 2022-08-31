@@ -54,11 +54,16 @@ export const contactsSlice = createSlice({
             body : action.payload.text,
           });
   
+          notify.onclick = function () {
+            notify.close();
+            window.focus();
+          };
+
           document.addEventListener('visibilitychange', () => {
             if (document.visibilityState === 'visible') {
               // The tab has become visible so clear the now-stale Notification.
               notify.close();
-            }
+            }      
           });
         }
       }
