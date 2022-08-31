@@ -16,6 +16,7 @@
   &__header,
   &__footer {
     display: flex;
+    align-items: center;
     gap: calc(var(--scale) * 0.75);
   
     padding: calc(var(--scale) * 0.75);
@@ -50,7 +51,6 @@
   
   &__userInfo {
     margin: 0;
-    padding-top: calc(var(--scale) * 0.75);
     font-size: calc(var(--scale) * 1);
 
     @media (max-width: 699px) {
@@ -71,7 +71,7 @@
     background-image: url(../../assets//arrow-back.svg);
     background-position: right;
     background-repeat: no-repeat;
-    background-size: calc(var(--scale) * 1.75);
+    background-size: contain;
   
     cursor: pointer;
     

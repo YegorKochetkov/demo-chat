@@ -32,6 +32,7 @@ export const ChatRoom: React.FC = () => {
           </p>
           <button
             type='button'
+            name='back to contacts'
             className={styles.chatRoom__backButton}
             onClick={() => dispatch(setSelectedContact(null))}
           />

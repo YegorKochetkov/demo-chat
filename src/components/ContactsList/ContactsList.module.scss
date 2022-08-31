@@ -32,7 +32,32 @@
   &__title {
     margin: 0;
     padding: calc(var(--scale) * 0.75);
-  
+
+    font-size: calc(var(--scale) * 1.25);
     color: var(--link-color);
+  }
+
+  &__userBlock {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__signOut {
+    width: calc(var(--scale) * 2);
+    height: calc(var(--scale) * 2);;
+
+    background: none;
+    border: none;
+    background-image: url(../../assets//logout.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+  
+    cursor: pointer;
+    
+    &:active {
+      transform: scale(0.9);
+    }
   }
 }

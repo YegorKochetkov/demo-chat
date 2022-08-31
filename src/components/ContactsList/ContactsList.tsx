@@ -9,8 +9,11 @@ import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { SearchInput } from "../SearchInput";
 import { getSelectedContact } from "../../store/selectedContact";
 import styles from './ContactsList.module.scss';
+import { logout } from "../../helpers/handleAuth";
+import { useNavigate } from "react-router-dom";
 
 export const ContactsList: React.FC = () => {
+  const navigate = useNavigate();
   const selectedContact = useAppSelector(getSelectedContact);
   const contacts = useAppSelector(getContacts);
 
@@ -19,6 +22,15 @@ export const ContactsList: React.FC = () => {
 
   const profile = useAppSelector(getProfile);
   const searchQuery = useAppSelector(getSearchQuery);
+
+  async function handleLogout() {
+    try {
+      await logout();
+      navigate('/');
+    } catch (err: any) {
+      alert('Failed to logout: ' + JSON.stringify(err.code));
+    }
+  };
 
   useEffect(() => {
     setContactsToRender(SortContactsByDate(contacts));
@@ -42,7 +54,17 @@ export const ContactsList: React.FC = () => {
         : styles.contactsList
     }>
       <header className={styles.contactsList__header}>
-        <UserAvatar photo={profile.avatar} isOnline={true} />
+        <div className={styles.contactsList__userBlock}>
+          <UserAvatar photo={profile.avatar} isOnline={true} />
+          {profile.name}
+          <button
+            type='button'
+            name='sign out'
+            className={styles.contactsList__signOut}
+            onClick={handleLogout}
+          />
+        </div>
+
         <SearchInput />
       </header>
       <main className={styles.contactsList__main}>
