@@ -9,8 +9,8 @@ import {
 import { Link, useNavigate } from "react-router-dom";
 import { auth } from "../../firebase";
 import { googleSingIn, logIn } from "../../helpers/handleAuth";
-import { useAppDispatch } from "../../store/hooks";
-import { setActiveUser, User } from "../../store/profileSlice";
+import { useAppDispatch, useAppSelector } from "../../store/hooks";
+import { getProfile, setActiveUser, User } from "../../store/profileSlice";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Container } from 'react-bootstrap';
 import GoogleButton from 'react-google-button';
@@ -18,6 +18,7 @@ import GoogleButton from 'react-google-button';
 export const Login: React.FC = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
+  const profile = useAppSelector(getProfile);
 
   const emailRef = useRef<HTMLInputElement | null>(null);
   const passwordRef = useRef<HTMLInputElement | null>(null);
@@ -67,10 +68,11 @@ export const Login: React.FC = () => {
       }
 
       dispatch(setActiveUser(user));
+      localStorage.setItem('profile', JSON.stringify(profile));
     });
 
     return unsubscribe;
-  }, [dispatch]);
+  }, [dispatch, profile]);
 
   return (
     <Container

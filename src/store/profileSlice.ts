@@ -14,11 +14,17 @@ export type User = {
   photoURL: string | null,
 }
 
-const initialState: ProfileState = {
+let initialState: ProfileState = {
   avatar: photo,
   name: null,
   mail: null,
 };
+
+const history = localStorage.getItem('profile');
+
+if (history !== null) {
+  initialState = JSON.parse(history);
+}
 
 export const profileSlice = createSlice({
   name: 'profile',
