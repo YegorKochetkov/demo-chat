@@ -1,18 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import { ContactType, getContacts } from '../../store/contactsSlice';
-import { useAppSelector } from '../../store/hooks';
+import { useAppDispatch, useAppSelector } from '../../store/hooks';
 import { getProfile } from '../../store/profileSlice';
 import { getSearchQuery } from '../../store/searchQuerySlice';
 import { Contact } from '../Contact';
 import { SortContactsByDate } from '../../helpers/SortContactsByDate';
 import { UserAvatar } from '../UserAvatar/UserAvatar';
 import { SearchInput } from "../SearchInput";
-import { getSelectedContact } from "../../store/selectedContact";
+import { getSelectedContact, setSelectedContact } from "../../store/selectedContact";
 import styles from './ContactsList.module.scss';
 import { logout } from "../../helpers/handleAuth";
 import { useNavigate } from "react-router-dom";
 
 export const ContactsList: React.FC = () => {
+  const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const selectedContact = useAppSelector(getSelectedContact);
   const contacts = useAppSelector(getContacts);
@@ -27,6 +28,7 @@ export const ContactsList: React.FC = () => {
     try {
       await logout();
       navigate('/');
+      dispatch(setSelectedContact(null));
     } catch (err: any) {
       alert('Failed to logout: ' + JSON.stringify(err.code));
     }
