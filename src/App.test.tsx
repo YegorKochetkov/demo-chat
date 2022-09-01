@@ -1,15 +1,11 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import App from './App';
-import { Provider } from "react-redux";
-import { store } from "./store/store";
+import { Chat } from "./components/Chat";
 
-test('renders contacts', () => {
+test('renders fallback for lazy', () => {
   render(
-    <Provider store={store}>
-      <App />
-    </Provider>
+    <Chat />
   );
-  const linkElement = screen.getByText(/josefina/i);
+  const linkElement = screen.getByText(/loading/i);
   expect(linkElement).toBeInTheDocument();
 });
