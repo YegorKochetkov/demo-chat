@@ -1,7 +1,11 @@
 {
   "files": {
-    "main.css": "/demo-chat/static/css/main.4f7d3238.css",
-    "main.js": "/demo-chat/static/js/main.6ab5dbc6.js",
+    "main.css": "/demo-chat/static/css/main.40530779.css",
+    "main.js": "/demo-chat/static/js/main.f35df8db.js",
+    "static/css/334.d9b3f65b.chunk.css": "/demo-chat/static/css/334.d9b3f65b.chunk.css",
+    "static/js/334.cba58c4b.chunk.js": "/demo-chat/static/js/334.cba58c4b.chunk.js",
+    "static/css/645.c26d6b36.chunk.css": "/demo-chat/static/css/645.c26d6b36.chunk.css",
+    "static/js/645.c5431572.chunk.js": "/demo-chat/static/js/645.c5431572.chunk.js",
     "static/js/787.ac68c0a9.chunk.js": "/demo-chat/static/js/787.ac68c0a9.chunk.js",
     "static/media/Barrera.png": "/demo-chat/static/media/Barrera.e3e3192df1afffdabfad.png",
     "static/media/Velazquez.png": "/demo-chat/static/media/Velazquez.ab45eb1d42b1faaf3d12.png",
@@ -15,12 +19,16 @@
     "static/media/send.svg": "/demo-chat/static/media/send.f37ab02425ecee05c940.svg",
     "index.html": "/demo-chat/index.html",
     "static/media/logout.svg": "/demo-chat/static/media/logout.303af24df4249e81de81.svg",
-    "main.4f7d3238.css.map": "/demo-chat/static/css/main.4f7d3238.css.map",
-    "main.6ab5dbc6.js.map": "/demo-chat/static/js/main.6ab5dbc6.js.map",
+    "main.40530779.css.map": "/demo-chat/static/css/main.40530779.css.map",
+    "main.f35df8db.js.map": "/demo-chat/static/js/main.f35df8db.js.map",
+    "334.d9b3f65b.chunk.css.map": "/demo-chat/static/css/334.d9b3f65b.chunk.css.map",
+    "334.cba58c4b.chunk.js.map": "/demo-chat/static/js/334.cba58c4b.chunk.js.map",
+    "645.c26d6b36.chunk.css.map": "/demo-chat/static/css/645.c26d6b36.chunk.css.map",
+    "645.c5431572.chunk.js.map": "/demo-chat/static/js/645.c5431572.chunk.js.map",
     "787.ac68c0a9.chunk.js.map": "/demo-chat/static/js/787.ac68c0a9.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.4f7d3238.css",
-    "static/js/main.6ab5dbc6.js"
+    "static/css/main.40530779.css",
+    "static/js/main.f35df8db.js"
   ]
 }
