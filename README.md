@@ -19,6 +19,7 @@
 - react-router, react hooks
 - mail/password & google authorization
 - browser notification
+- lazy loading, localStorage
 - adaptive layout
 
 ## [Демо](https://yegorkochetkov.github.io/demo-chat/)
