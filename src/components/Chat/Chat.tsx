@@ -1,13 +1,18 @@
-import React from 'react';
+import React, { Suspense } from 'react';
 import styles from './Chat.module.scss';
-import { ChatRoom } from '../ChatRoom';
-import { ContactsList } from '../ContactsList';
+
+const ChatRoom = React.lazy(() => import('../ChatRoom')
+  .then(({ ChatRoom }) => ({ default: ChatRoom })));
+const ContactsList = React.lazy(() => import('../ContactsList')
+  .then(({ ContactsList }) => ({ default: ContactsList })));
 
 export const Chat: React.FC = () => {
   return (
     <div className={styles.chat}>
-      <ContactsList />
-      <ChatRoom />
+      <Suspense fallback={<div>Loading...</div>}>
+        <ContactsList />
+        <ChatRoom />
+      </Suspense>
     </div>
   )
 };
