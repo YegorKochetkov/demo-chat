@@ -128,7 +128,7 @@ export const SignUp: React.FC = () => {
         </Card>
 
         <div className='w-100 text-center mt-2'>
-          Don't have an account? <Link to='/'>Log In</Link>
+          Don't have an account? <Link to='/login'>Log In</Link>
         </div>
       </div>
     </Container>
