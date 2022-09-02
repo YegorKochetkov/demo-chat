@@ -1,9 +1,8 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { RootState } from './store';
-import photo from '../assets/user_icon.png';
 
 type ProfileState = {
-  avatar: string,
+  avatar: string | null,
   name: string | null,
   mail: string | null,
 };
@@ -15,7 +14,7 @@ export type User = {
 }
 
 let initialState: ProfileState = {
-  avatar: photo,
+  avatar: null,
   name: null,
   mail: null,
 };
@@ -33,11 +32,12 @@ export const profileSlice = createSlice({
     setActiveUser: (state, action: PayloadAction<User>) => {
       state.name =  action.payload.displayName || action.payload?.email;
       state.mail =  action.payload.email;
-      state.avatar = action.payload.photoURL || state.avatar;
+      state.avatar = action.payload.photoURL;
     },
     setUserLogoOut: (state) => {
       state.name =  null;
       state.mail =  null;
+      state.avatar = null;
     },
   }
 });

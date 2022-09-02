@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { ContactType, getContacts } from '../../store/contactsSlice';
 import { useAppDispatch, useAppSelector } from '../../store/hooks';
-import { getProfile } from '../../store/profileSlice';
+import { getProfile, setUserLogoOut } from '../../store/profileSlice';
 import { getSearchQuery } from '../../store/searchQuerySlice';
 import { Contact } from '../Contact';
 import { SortContactsByDate } from '../../helpers/SortContactsByDate';
@@ -11,6 +11,9 @@ import { getSelectedContact, setSelectedContact } from "../../store/selectedCont
 import styles from './ContactsList.module.scss';
 import { logout } from "../../helpers/handleAuth";
 import { useNavigate } from "react-router-dom";
+import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from '../../firebase';
+import photo from '../../assets/user_icon.png';
 
 export const ContactsList: React.FC = () => {
   const dispatch = useAppDispatch();
@@ -27,8 +30,10 @@ export const ContactsList: React.FC = () => {
   async function handleLogout() {
     try {
       await logout();
-      navigate('/');
+      dispatch(setUserLogoOut());
       dispatch(setSelectedContact(null));
+      localStorage.clear();
+      navigate('/');
     } catch (err: any) {
       alert('Failed to logout: ' + JSON.stringify(err.code));
     }
@@ -57,7 +62,7 @@ export const ContactsList: React.FC = () => {
     }>
       <header className={styles.contactsList__header}>
         <div className={styles.contactsList__userBlock}>
-          <UserAvatar photo={profile.avatar} isOnline={true} />
+          <UserAvatar photo={profile.avatar || photo} isOnline={true} />
           {profile.name}
           <button
             type='button'
