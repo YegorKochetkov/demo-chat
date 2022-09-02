@@ -11,8 +11,6 @@ import { getSelectedContact, setSelectedContact } from "../../store/selectedCont
 import styles from './ContactsList.module.scss';
 import { logout } from "../../helpers/handleAuth";
 import { useNavigate } from "react-router-dom";
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../../firebase';
 import photo from '../../assets/user_icon.png';
 
 export const ContactsList: React.FC = () => {
