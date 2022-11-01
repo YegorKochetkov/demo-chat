@@ -1,3 +1,5 @@
+# [Демо](https://yegorkochetkov.github.io/demo-chat/)
+
 ## Task: implement a fake chat page with the following requirements:
 - use React (preferably, but you can use Angular or any other framework)
 - it is advisable to write HTML/SCSS your own without using UI libraries
@@ -21,5 +23,3 @@
 - browser notification
 - lazy loading, localStorage
 - adaptive layout
-
-## [Демо](https://yegorkochetkov.github.io/demo-chat/)
